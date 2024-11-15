@@ -85,12 +85,12 @@ def prep_T():
     file = open("cfg.txt", "r")
     cfg = file.read()
     file.close()
-    size_str = cfg.split(',', 3)
+    size_str = cfg.split(',', 1)
     size[0] = int(size_str[0])
-    size[1] = int(size_str[1])
-    size[2] = int(size_str[2])
+    #size[1] = int(size_str[1])
+    #size[2] = int(size_str[2])
     remain = size[idx] - timepast
-    set_index_str()
+    #set_index_str()
     show()
 
 def startpause():
@@ -138,15 +138,15 @@ def reset():
 def silence():
     buzz.duty(0)
     
-def set_index_str():
-    global idx
-    global index_str
-    if idx == 0:
-            index_str = "A"
-    if idx == 1:
-            index_str = " B"
-    if idx == 2:
-            index_str = "  C"
+#def set_index_str():
+#    global idx
+#    global index_str
+#    if idx == 0:
+#            index_str = "A"
+#    if idx == 1:
+#            index_str = " B"
+#    if idx == 2:
+#            index_str = "  C"
 
 
 def scream(ms):

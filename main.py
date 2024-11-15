@@ -12,6 +12,10 @@ import network
 i2c = I2C(sda=Pin(4), scl=Pin(5)) # D2 D1
 display = ssd1306.SSD1306_I2C(128, 64, i2c)
 
+display.fill(0)
+display.text('Oi! : )',56,28,1)
+display.show()
+
 isDice = False
 isChrono = False
 
@@ -24,14 +28,6 @@ if (isit == "2"): isChrono = True
 ##########################################
 ##########################################
 
-
-
-####################################################
-
-sta_if = network.WLAN(network.STA_IF)
-sta_if.active(False)
-ap_if = network.WLAN(network.AP_IF)
-ap_if.active(False)
 
 if (isChrono):
     print("it is chrono")
@@ -48,9 +44,20 @@ elif (isDice):
     file.write("0")
     file.close()
 else:
+    display.fill(0)
+    display.text('Oi! :-)',56,28,1)
+    display.show()
     print("it is timer")
     import timerlib
     timerlib.prep_T()
+
+####################################################
+
+sta_if = network.WLAN(network.STA_IF)
+sta_if.active(False)
+ap_if = network.WLAN(network.AP_IF)
+ap_if.active(False)
+
 
 while True:
     if (isChrono):
