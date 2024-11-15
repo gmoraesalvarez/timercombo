@@ -1,4 +1,4 @@
-It's three in one!!!
+# It's three in one!!!
 
 This code runs on a micropython environment. It was made for the D1 Mini, but any esp32 will do too, I guess.
 
